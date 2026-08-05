@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#174f36">
+<title>대륙마루</title>
+<link rel="stylesheet" href="./styles.css">
+<style>
+.logo-img{height:34px;width:auto;display:block;filter:brightness(0) invert(1)}
+@media(max-width:420px){.logo-img{height:28px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <div>
+      <img class="logo-img" src="./daeruk-logo.gif" alt="DAERUK">
+      <div style="font-size:12px;opacity:.82;margin-top:4px">대륙마루</div>
+    </div>
+    <div class="badge">VAT 별도</div>
+  </div>
+  <div class="search-wrap">
+    <input id="q" class="search" placeholder="제품명, 브랜드, 규격 검색">
+    <div id="filters" class="filters"></div>
+  </div>
+</header>
+<main>
+  <div class="summary"><span id="count"></span><span>제품 선택 후 예상견적 계산</span></div>
+  <section id="grid" class="grid"></section>
+</main>
+<footer>대륙마루 단가표 · 예상금액은 참고용이며 VAT 별도입니다.</footer>
+<div id="modal" class="modal">
+  <div class="sheet">
+    <div class="handle"></div>
+    <button id="close" class="close">×</button>
+    <div id="dBrand" class="detail-brand"></div>
+    <div id="dName" class="detail-name"></div>
+    <div id="dMeta" class="detail-meta"></div>
+    <div class="detail-price"><small>적용 단가 / 평</small><strong id="dPrice"></strong></div>
+    <section class="calc">
+      <h3>예상금액 계산</h3>
+      <div class="help">평수 또는 헤베 중 하나만 입력하세요. 1평 = 3.3㎡로 계산합니다.</div>
+      <div class="input-row">
+        <div class="field"><label>평수</label><input id="pyeong" inputmode="decimal" type="number" min="0" step="0.1" placeholder="예: 30"></div>
+        <div class="field"><label>헤베(㎡)</label><input id="sqm" inputmode="decimal" type="number" min="0" step="0.1" placeholder="예: 99"></div>
+      </div>
+      <div class="result"><small>예상금액</small><strong id="result">0원</strong><div id="basis" class="note">평수 또는 헤베를 입력하세요.</div></div>
+    </section>
+  </div>
+</div>
+<script src="./products.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
